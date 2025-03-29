@@ -1,0 +1,53 @@
+{
+    "name": "it-bens/shopware-sdk-data-core",
+    "description": "The data base classes, interfaces and traits of the Shopware 6 SDK",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vin",
+            "email": "levienthuong@gmail.com",
+            "role": "Original Developer of the data classes, interfaces and traits"
+        },
+        {
+            "name": "Martin Bens",
+            "email": "martin.bens@it-bens.de",
+            "role": "Developer of forked Shopware 6 SDK"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.25",
+        "captainhook/plugin-composer": "^5.3",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12",
+        "rector/rector": "^2.0",
+        "symplify/coding-standard": "^12.3",
+        "symplify/easy-coding-standard": "^12.5"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "captainhook/plugin-composer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "ITB\\ShopwareSdkDataCore\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ITB\\ShopwareSdkDataCore\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "style-check": "php vendor/bin/ecs check --config=ecs.php src tests",
+        "style-fix": "php vendor/bin/ecs check --config=ecs.php --fix src tests",
+        "code-upgrade": "php vendor/bin/rector process --config=rector.php src tests",
+        "static-analysis": "php vendor/bin/phpstan analyze --configuration=phpstan.neon --memory-limit=-1 src tests"
+    }
+}

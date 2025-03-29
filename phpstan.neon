@@ -1,0 +1,8 @@
+parameters:
+    level: max
+    inferPrivatePropertyTypeFromConstructor: true
+    reportUnmatchedIgnoredErrors: true
+    treatPhpDocTypesAsCertain: false
+    paths:
+        - src
+        - tests
